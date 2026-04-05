@@ -20,6 +20,12 @@
             --bg-light: #f9fafb;
             --white: #ffffff;
             --radius: 12px;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-border: #eeeeee;
+            --card-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.08);
+            --card-shadow-hover: 0 20px 40px -15px rgba(160, 64, 64, 0.2);
+            --transition-speed: 0.4s;
+
         }
 
         * { box-sizing: border-box; }
@@ -291,39 +297,116 @@
             .about-img { height: 260px; }
         }
 
-        /* ======= SERVICES ======= */
-        .services {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
 
-        .grid-services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+/* --- Grille de disposition --- */
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
 
-        .service-card {
-            background: white;
-            padding: 30px;
-            border: 1px solid #eee;
-            border-radius: var(--radius);
-            transition: 0.3s;
-        }
+/* --- Style de la Carte de Service --- */
+.service-card {
+    position: relative;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px); /* Effet flou moderne */
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed) cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
-        .service-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 24px rgba(160,64,64,0.1);
-        }
+/* --- Effet au Survol (Hover) --- */
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: var(--card-shadow-hover);
+    background: var(--white);
+}
 
-        .service-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
+/* --- Icône --- */
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    transition: transform var(--transition-speed) ease;
+}
 
+.service-card:hover i {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* --- Titre de la Carte --- */
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin: 0 0 15px 0;
+    color: var(--text-main);
+    position: relative;
+}
+
+/* Petit liseret décoratif sous le titre au hover */
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width var(--transition-speed) ease;
+}
+
+.service-card:hover h3::after {
+    width: 40px;
+}
+
+/* --- Texte descriptif --- */
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* --- Optionnel : Petit indicateur discret en bas à droite --- */
+.service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent transparent transparent;
+    transition: border-color var(--transition-speed) ease;
+}
+
+.service-card:hover::before {
+    border-color: transparent transparent var(--primary-soft) transparent;
+}
+
+/* --- Adaptabilité Mobile --- */
+@media (max-width: 480px) {
+    .service-card {
+        padding: 30px 20px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .service-card h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
         /* ======= PORTFOLIO ======= */
         .portfolio {
             padding: 80px 0;
@@ -591,6 +674,49 @@
         }
 
         #back-to-top:hover { transform: translateY(-3px); }
+    /* --- BOUTON TÉLÉPHONE FLOTTANT --- */
+.btn-phone-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* Placé à gauche comme demandé */
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(160, 64, 64, 0.4);
+    z-index: 2000; /* Pour être au-dessus du reste */
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animation de pulsation discrète */
+.btn-phone-float::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+
+.btn-phone-float:hover {
+    transform: scale(1.1);
+    background-color: #8a3535;
+}
+
+/* Masquer sur ordinateur */
+@media (min-width: 1024px) {
+    .btn-phone-float { display: none; } */
+}
+
     </style>
 </head>
 
@@ -696,10 +822,10 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item reveal" data-category="murets"
-                     data-src="https://images.unsplash.com/photo-1621293954908-d28190e51bc3?q=80&w=900"
+                     data-src="https://cdn.chausson.fr/images/blog/jardin/muret/muret-13.jpg"
                      data-caption="Muret de clôture briques">
                     <div class="gallery-item-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1621293954908-d28190e51bc3?q=80&w=600" alt="Muret">
+                        <img src="https://cdn.chausson.fr/images/blog/jardin/muret/muret-13.jpg" alt="Muret">
                         <div class="gallery-zoom-hint"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <h3>Muret de clôture briques</h3>
@@ -769,6 +895,9 @@
             </div>
         </div>
     </footer>
+    <a href="tel:+33766486422" class="btn-phone-float" aria-label="Appeler Ludo Micile">
+    <i class="fas fa-phone"></i>
+</a>
 
     <!-- ======= BACK TO TOP ======= -->
     <button id="back-to-top" aria-label="Retour en haut">
