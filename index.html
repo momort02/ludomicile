@@ -8,7 +8,9 @@
         content="LANGE (LUDO MICILE) - Maçon professionnel à Tergnier (02). Maçonnerie générale, rénovation et construction dans l'Aisne. SIREN 993620509.">
     <title>LUDO MICILE (Société LANGE) — Maçon à Tergnier (02)</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -28,7 +30,9 @@
 
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -65,13 +69,23 @@
             transform: translateY(28px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
 
         /* ======= HEADER ======= */
         header {
@@ -112,7 +126,9 @@
             transition: 0.2s;
         }
 
-        nav a:hover { color: var(--primary); }
+        nav a:hover {
+            color: var(--primary);
+        }
 
         .btn-contact {
             background: var(--primary);
@@ -122,7 +138,9 @@
             transition: background 0.2s !important;
         }
 
-        .btn-contact:hover { background: #8a3535 !important; }
+        .btn-contact:hover {
+            background: #8a3535 !important;
+        }
 
         /* ======= BURGER ======= */
         .burger {
@@ -145,12 +163,22 @@
             transition: 0.3s;
         }
 
-        .burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .burger.open span:nth-child(2) { opacity: 0; }
-        .burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .burger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
 
         @media (max-width: 768px) {
-            .burger { display: flex; }
+            .burger {
+                display: flex;
+            }
 
             nav {
                 position: fixed;
@@ -163,19 +191,28 @@
                 padding: 20px 24px;
                 gap: 14px;
                 border-bottom: 1px solid #e5e7eb;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
                 transform: translateY(-130%);
-                transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+                transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
                 z-index: 999;
             }
 
-            nav.open { transform: translateY(0); }
+            nav.open {
+                transform: translateY(0);
+            }
 
-            nav a { font-size: 1.05rem; }
+            nav a {
+                font-size: 1.05rem;
+            }
 
-            .btn-contact { text-align: center; }
+            .btn-contact {
+                text-align: center;
+            }
 
-            .nav-fb { text-align: center; font-size: 1.3rem !important; }
+            .nav-fb {
+                text-align: center;
+                font-size: 1.3rem !important;
+            }
         }
 
         /* ======= HERO ======= */
@@ -222,12 +259,15 @@
             height: 450px;
             object-fit: cover;
             border-radius: 24px;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             margin-top: 40px;
         }
 
         @media (max-width: 600px) {
-            .hero-img { height: 240px; width: 100%; }
+            .hero-img {
+                height: 240px;
+                width: 100%;
+            }
         }
 
         /* ======= ABOUT ======= */
@@ -249,7 +289,7 @@
             height: 380px;
             object-fit: cover;
             border-radius: var(--radius);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
         }
 
         .about-text h3 {
@@ -294,119 +334,124 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            .about-img { height: 260px; }
+
+            .about-img {
+                height: 260px;
+            }
         }
 
 
-/* --- Grille de disposition --- */
-.grid-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
+        /* --- Grille de disposition --- */
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
 
-/* --- Style de la Carte de Service --- */
-.service-card {
-    position: relative;
-    background: var(--card-bg);
-    backdrop-filter: blur(10px); /* Effet flou moderne */
-    -webkit-backdrop-filter: blur(10px);
-    padding: 40px 30px;
-    border-radius: var(--radius);
-    border: 1px solid var(--card-border);
-    box-shadow: var(--card-shadow);
-    transition: all var(--transition-speed) cubic-bezier(0.25, 1, 0.5, 1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+        /* --- Style de la Carte de Service --- */
+        .service-card {
+            position: relative;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            /* Effet flou moderne */
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--card-border);
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-/* --- Effet au Survol (Hover) --- */
-.service-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
-    box-shadow: var(--card-shadow-hover);
-    background: var(--white);
-}
+        /* --- Effet au Survol (Hover) --- */
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--card-shadow-hover);
+            background: var(--white);
+        }
 
-/* --- Icône --- */
-.service-card i {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-    transition: transform var(--transition-speed) ease;
-}
+        /* --- Icône --- */
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: transform var(--transition-speed) ease;
+        }
 
-.service-card:hover i {
-    transform: scale(1.1) rotate(-5deg);
-}
+        .service-card:hover i {
+            transform: scale(1.1) rotate(-5deg);
+        }
 
-/* --- Titre de la Carte --- */
-.service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    margin: 0 0 15px 0;
-    color: var(--text-main);
-    position: relative;
-}
+        /* --- Titre de la Carte --- */
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0 0 15px 0;
+            color: var(--text-main);
+            position: relative;
+        }
 
-/* Petit liseret décoratif sous le titre au hover */
-.service-card h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width var(--transition-speed) ease;
-}
+        /* Petit liseret décoratif sous le titre au hover */
+        .service-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width var(--transition-speed) ease;
+        }
 
-.service-card:hover h3::after {
-    width: 40px;
-}
+        .service-card:hover h3::after {
+            width: 40px;
+        }
 
-/* --- Texte descriptif --- */
-.service-card p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin: 0;
-    line-height: 1.7;
-}
+        /* --- Texte descriptif --- */
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.7;
+        }
 
-/* --- Optionnel : Petit indicateur discret en bas à droite --- */
-.service-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 20px 20px;
-    border-color: transparent transparent transparent transparent;
-    transition: border-color var(--transition-speed) ease;
-}
 
-.service-card:hover::before {
-    border-color: transparent transparent var(--primary-soft) transparent;
-}
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 20px 20px;
+            border-color: transparent transparent transparent transparent;
+            transition: border-color var(--transition-speed) ease;
+        }
 
-/* --- Adaptabilité Mobile --- */
-@media (max-width: 480px) {
-    .service-card {
-        padding: 30px 20px;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .service-card h3::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
+        .service-card:hover::before {
+            border-color: transparent transparent var(--primary-soft) transparent;
+        }
+
+        /* --- Adaptabilité Mobile --- */
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 30px 20px;
+                align-items: center;
+                text-align: center;
+            }
+
+            .service-card h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
         /* ======= PORTFOLIO ======= */
         .portfolio {
             padding: 80px 0;
@@ -432,7 +477,10 @@
             transition: 0.2s;
         }
 
-        .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
 
         .filter-btn.active {
             background: var(--primary);
@@ -457,7 +505,7 @@
 
         .gallery-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
         }
 
         .gallery-item-img-wrap {
@@ -473,12 +521,14 @@
             transition: transform 0.4s ease;
         }
 
-        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
 
         .gallery-zoom-hint {
             position: absolute;
             inset: 0;
-            background: rgba(160,64,64,0.55);
+            background: rgba(160, 64, 64, 0.55);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -491,7 +541,9 @@
             font-size: 2rem;
         }
 
-        .gallery-item:hover .gallery-zoom-hint { opacity: 1; }
+        .gallery-item:hover .gallery-zoom-hint {
+            opacity: 1;
+        }
 
         .gallery-item h3 {
             padding: 14px 16px;
@@ -504,7 +556,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.88);
+            background: rgba(0, 0, 0, 0.88);
             z-index: 2000;
             align-items: center;
             justify-content: center;
@@ -512,11 +564,18 @@
             animation: fadeIn 0.2s ease;
         }
 
-        .lightbox.active { display: flex; }
+        .lightbox.active {
+            display: flex;
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .lightbox-inner {
@@ -530,7 +589,7 @@
             max-width: 100%;
             max-height: 80vh;
             border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .lightbox-caption {
@@ -560,7 +619,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             color: white;
             border: none;
             width: 44px;
@@ -574,13 +633,26 @@
             transition: background 0.2s;
         }
 
-        .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
-        .lightbox-prev { left: -56px; }
-        .lightbox-next { right: -56px; }
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lightbox-prev {
+            left: -56px;
+        }
+
+        .lightbox-next {
+            right: -56px;
+        }
 
         @media (max-width: 600px) {
-            .lightbox-prev { left: 0; }
-            .lightbox-next { right: 0; }
+            .lightbox-prev {
+                left: 0;
+            }
+
+            .lightbox-next {
+                right: 0;
+            }
         }
 
         /* ======= FOOTER ======= */
@@ -603,21 +675,32 @@
             font-family: 'Playfair Display', serif;
         }
 
-        .footer-logo p { color: #9ca3af; margin: 0 0 16px; }
+        .footer-logo p {
+            color: #9ca3af;
+            margin: 0 0 16px;
+        }
 
-        .footer-links h4 { color: white; margin: 0 0 14px; font-size: 0.95rem; }
+        .footer-links h4 {
+            color: white;
+            margin: 0 0 14px;
+            font-size: 0.95rem;
+        }
 
         .footer-links a {
             color: #9ca3af;
             text-decoration: none;
-            display: block;
             margin-bottom: 8px;
             transition: color 0.2s;
         }
 
-        .footer-links a:hover { color: white; }
+        .footer-links a:hover {
+            color: white;
+        }
 
-        .footer-links p { color: #9ca3af; margin: 0 0 8px; }
+        .footer-links p {
+            color: #9ca3af;
+            margin: 0 0 8px;
+        }
 
         .fb-icon {
             font-size: 2rem;
@@ -625,7 +708,13 @@
             transition: opacity 0.2s;
         }
 
-        .fb-icon:hover { opacity: 0.8; }
+        .fb-icon:hover {
+            opacity: 0.8;
+        }
+
+        .footer-phone-icon {
+            color: var(--primary);
+        }
 
         .footer-phone-link {
             display: inline-flex;
@@ -633,9 +722,12 @@
             gap: 8px;
             color: #9ca3af !important;
             font-weight: 600;
+            white-space: nowrap;
         }
 
-        .footer-phone-link:hover { color: white !important; }
+        .footer-phone-link:hover {
+            color: white !important;
+        }
 
         .copy {
             border-top: 1px solid #374151;
@@ -658,7 +750,7 @@
             border-radius: 50%;
             font-size: 1.1rem;
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(160,64,64,0.4);
+            box-shadow: 0 4px 14px rgba(160, 64, 64, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -673,50 +765,58 @@
             pointer-events: auto;
         }
 
-        #back-to-top:hover { transform: translateY(-3px); }
-    /* --- BOUTON TÉLÉPHONE FLOTTANT --- */
-.btn-phone-float {
-    position: fixed;
-    bottom: 25px;
-    left: 25px; /* Placé à gauche comme demandé */
-    width: 60px;
-    height: 60px;
-    background-color: var(--primary);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    box-shadow: 0 4px 15px rgba(160, 64, 64, 0.4);
-    z-index: 2000; /* Pour être au-dessus du reste */
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
+        #back-to-top:hover {
+            transform: translateY(-3px);
+        }
 
-/* Animation de pulsation discrète */
-.btn-phone-float::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary);
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0.5;
-}
+        /* --- BOUTON TÉLÉPHONE FLOTTANT --- */
+        .btn-phone-float {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            /* Placé à gauche comme demandé */
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(160, 64, 64, 0.4);
+            z-index: 2000;
+            /* Pour être au-dessus du reste */
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Animation de pulsation discrète */
+        .btn-phone-float::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.5;
+        }
 
 
-.btn-phone-float:hover {
-    transform: scale(1.1);
-    background-color: #8a3535;
-}
+        .btn-phone-float:hover {
+            transform: scale(1.1);
+            background-color: #8a3535;
+        }
 
-/* Masquer sur ordinateur */
-@media (min-width: 1024px) {
-    .btn-phone-float { display: none; } */
-}
+        /* Masquer sur ordinateur */
+        @media (min-width: 1024px) {
+            .btn-phone-float {
+                display: none;
+            }
 
+            */
+        }
     </style>
 </head>
 
@@ -733,7 +833,8 @@
                 <a href="#about">À propos</a>
                 <a href="#services">Services</a>
                 <a href="#portfolio">Portfolio</a>
-                <a href="https://www.facebook.com/profile.php?id=61573356066114" target="_blank" class="nav-fb"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61573356066114" target="_blank" class="nav-fb"><i
+                        class="fab fa-facebook"></i></a>
                 <a href="#contact" class="btn-contact">Devis Gratuit</a>
             </nav>
         </div>
@@ -743,12 +844,13 @@
     <section class="hero">
         <div class="container">
             <h2 class="reveal">L'art de la maçonnerie à Tergnier</h2>
-            <p class="hero-sub reveal reveal-delay-1">Entreprise LANGE : Qualité, robustesse et savoir-faire traditionnel.</p>
+            <p class="hero-sub reveal reveal-delay-1">Entreprise LANGE : Qualité, robustesse et savoir-faire
+                traditionnel.</p>
             <a href="tel:+33766486422" class="hero-phone reveal reveal-delay-2">
                 <i class="fas fa-phone"></i> 07 66 48 64 22
             </a>
-          
-        
+
+
         </div>
     </section>
 
@@ -756,15 +858,21 @@
     <section id="about" class="about">
         <div class="container">
             <h2 class="reveal">À Propos</h2>
-            <p class="section-sub reveal">Un artisan de confiance dans l'Aisne</p>
+            <p class="section-sub reveal">Un artisan de confiance dans l'Aisne <br>Entreprise crée le 10/11/2025</p>
             <div class="about-grid">
                 <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600"
-                     alt="Maçon au travail" class="about-img reveal">
+                    alt="Maçon au travail" class="about-img reveal">
                 <div class="about-text reveal reveal-delay-1">
                     <h3>Savoir-faire local, engagement durable</h3>
-                    <p>Basée à Tergnier depuis sa création, la <strong>Société LANGE</strong> intervient sur tous types de chantiers dans l'Aisne et les Hauts-de-France : constructions neuves, rénovations, maçonnerie décoratives et travaux de gros œuvre.</p>
-                    <p>Notre priorité : un travail soigné, des matériaux de qualité et une relation de confiance avec chaque client. Du particulier à la collectivité, nous adaptons notre intervention à votre projet et votre budget.</p>
-                    <p>Entreprise individuelle inscrite au registre du commerce, <strong>SIREN 993 620 509</strong>, nous réalisons systématiquement un devis gratuit et détaillé avant tout démarrage de chantier.</p>
+                    <p>Basée à Tergnier depuis sa création, la <strong>Société LANGE</strong> intervient sur tous types
+                        de chantiers dans l'Aisne et les Hauts-de-France : constructions neuves, rénovations, maçonnerie
+                        décoratives et travaux de gros œuvre.</p>
+                    <p>Notre priorité : un travail soigné, des matériaux de qualité et une relation de confiance avec
+                        chaque client. Du particulier à la collectivité, nous adaptons notre intervention à votre projet
+                        et votre budget.</p>
+                    <p>Entreprise individuelle inscrite au registre du commerce, <strong>SIREN 993 620 509</strong>,
+                        nous réalisons systématiquement un devis gratuit et détaillé avant tout démarrage de chantier.
+                    </p>
                     <div class="about-stats">
                         <div class="stat">
                             <strong>100%</strong>
@@ -793,7 +901,8 @@
                 <div class="service-card reveal">
                     <i class="fas fa-hammer"></i>
                     <h3>Gros Œuvre</h3>
-                    <p>Construction de maisons individuelles, extensions et fondations solides pour vos projets neufs.</p>
+                    <p>Construction de maisons individuelles, extensions et fondations solides pour vos projets neufs.
+                    </p>
                 </div>
                 <div class="service-card reveal reveal-delay-1">
                     <i class="fas fa-border-all"></i>
@@ -822,31 +931,32 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item reveal" data-category="murets"
-                     data-src="https://cdn.chausson.fr/images/blog/jardin/muret/muret-13.jpg"
-                     data-caption="Muret de clôture briques">
+                    data-src="https://cdn.chausson.fr/images/blog/jardin/muret/muret-13.jpg"
+                    data-caption="Muret">
                     <div class="gallery-item-img-wrap">
                         <img src="https://cdn.chausson.fr/images/blog/jardin/muret/muret-13.jpg" alt="Muret">
                         <div class="gallery-zoom-hint"><i class="fas fa-search-plus"></i></div>
                     </div>
-                    <h3>Muret de clôture briques</h3>
+                    <h3>Muret</h3>
                 </div>
                 <div class="gallery-item reveal reveal-delay-1" data-category="realisations"
-                     data-src="https://images.unsplash.com/photo-1503387762-592dee58c460?q=80&w=900"
-                     data-caption="Extension de maison">
+                    data-src="https://www.tekart-architecture.com/wp-content/uploads/2014/03/photo-1-chantier-extension-maison-bois-lss-77.jpg"
+                    data-caption="Extension de maison">
                     <div class="gallery-item-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1503387762-592dee58c460?q=80&w=600" alt="Construction">
+                        <img src="https://www.tekart-architecture.com/wp-content/uploads/2014/03/photo-1-chantier-extension-maison-bois-lss-77.jpg"
+                            alt="Construction">
                         <div class="gallery-zoom-hint"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <h3>Extension de maison</h3>
                 </div>
-                <div class="gallery-item reveal reveal-delay-2" data-category="murets"
-                     data-src="https://images.unsplash.com/photo-1590059349001-9257d0d08709?q=80&w=900"
-                     data-caption="Taille de pierre">
+                <div class="gallery-item reveal reveal-delay-2" data-category="none"
+                    data-src="https://o-devis.fr/wp-content/uploads/2020/12/allee-gravier-e1607005153405.jpg"
+                    data-caption="Allée en cailloux et gravier">
                     <div class="gallery-item-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1590059349001-9257d0d08709?q=80&w=600" alt="Pierre">
+                        <img src="https://o-devis.fr/wp-content/uploads/2020/12/allee-gravier-e1607005153405.jpg" alt="Pierre">
                         <div class="gallery-zoom-hint"><i class="fas fa-search-plus"></i></div>
                     </div>
-                    <h3>Taille de pierre</h3>
+                    <h3>Allée en cailloux et gravier</h3>
                 </div>
             </div>
         </div>
@@ -856,8 +966,10 @@
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
         <div class="lightbox-inner">
             <button class="lightbox-close" id="lightbox-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
-            <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button>
-            <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button>
+            <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Précédent"><i
+                    class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Suivant"><i
+                    class="fas fa-chevron-right"></i></button>
             <img id="lightbox-img" src="" alt="">
             <p class="lightbox-caption" id="lightbox-caption"></p>
         </div>
@@ -876,28 +988,34 @@
                 </div>
                 <div class="footer-links">
                     <h4>Contact & Siège</h4>
-                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> 65 Rue Vauban, 02700 Tergnier</p>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> 65 Rue Vauban, 02700
+                        Tergnier</p>
                     <p><i class="fas fa-city" style="color: var(--primary);"></i> Aisne, Hauts-de-France</p>
                     <p>
-                        <i class="fas fa-phone" style="color: var(--primary);"></i>
-                        <a href="tel:+33766486422" class="footer-phone-link"> 07 66 48 64 22</a>
+                        <i class="fas fa-phone footer-phone-icon"></i>
+                        <a href="tel:+33766486422" class="footer-phone-link">07 66 48 64 22</a>
                     </p>
                 </div>
                 <div class="footer-links">
                     <h4>Informations Légales</h4>
                     <p>Raison sociale : <strong style="color:white;">Société LANGE</strong></p>
                     <p>SIREN : 993 620 509</p>
-                    <p>Code NAF : Travaux de maçonnerie générale</p>
+                    <p>SIRET : 993 620 509 00014</p>
+                    <p>TVA : FR32993620509</p>
+                    <p>Code NAF : 	43.99C  (Travaux de maçonnerie générale et gros œuvre de bâtiment)</p>
                 </div>
             </div>
             <div class="copy">
                 &copy; 2026 Ludo Micile - Société LANGE. Enregistrée à Tergnier. Tous droits réservés.
+                <br>
+                Conception & développement par Amaury Goemaere. Site vitrine pour présentation de services de
+                maçonnerie. Non destiné à la prise de rendez-vous en ligne. Contact par téléphone ou Facebook.
             </div>
         </div>
     </footer>
     <a href="tel:+33766486422" class="btn-phone-float" aria-label="Appeler Ludo Micile">
-    <i class="fas fa-phone"></i>
-</a>
+        <i class="fas fa-phone"></i>
+    </a>
 
     <!-- ======= BACK TO TOP ======= -->
     <button id="back-to-top" aria-label="Retour en haut">
@@ -1018,4 +1136,5 @@
     </script>
 
 </body>
+
 </html>
