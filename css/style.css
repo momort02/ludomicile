@@ -13,6 +13,42 @@
             --transition-speed: 0.4s;
 
         }
+#video-preloader {
+    position: fixed;
+    inset: 0; /* top, left, bottom, right à 0 */
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#preloader-video {
+    width: 100%;
+    height: 100%;
+    /* C'est cette ligne qui permet de remplir tout l'espace 
+       quitte à déborder sur les côtés */
+    object-fit: cover; 
+    
+    /* Optionnel : si tu veux que la vidéo soit centrée 
+       par rapport à son propre centre */
+    object-position: center;
+}
+
+/* Animation de sortie */
+.loader-fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+body.loading {
+    overflow: hidden !important;
+}
+
 
         * {
             box-sizing: border-box;
